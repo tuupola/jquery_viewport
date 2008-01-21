@@ -21,13 +21,19 @@
 
 <script type="text/javascript" charset="utf-8">
 $(function() {
-  $(window).bind("scroll", function(event) {
-      var message = "";
-      $("#photos img:inviewport").each(function() {
+    var previous = "";
+    $(window).bind("scroll", function(event) {
+        var message = "";
+        
+        $("#photos img:inviewport").each(function() {
           message = message + $(this).attr("src") + "<br />";
-      });
-      $.facebox(message);
-  });
+        });
+        
+        if (message != previous) {
+            $.facebox(message);
+            previous = message;
+        }        
+    });
 });
 </script>  
 
