@@ -6,7 +6,7 @@
  * Licensed under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
  *
- * Revision: $Id: jquery.lazyload.js 291 2008-01-18 20:26:11Z tuupola $
+ * Revision: $Id$
  *
  */
 (function($) {
