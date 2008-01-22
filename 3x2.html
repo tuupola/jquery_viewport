@@ -23,7 +23,7 @@
 $(function() {
     var previous = "";
     $(window).bind("scroll", function(event) {
-        var message = "";
+        var message = "<h3>Images in viewport:</h3> With  ";
         
         $("#photos img:inviewport").each(function() {
           message = message + $(this).attr("src") + "<br />";
