@@ -3,7 +3,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Viewport Selectors</title>
+<title>Viewport Selectors Demo</title>
 <meta name="generator" content="Mephisto" />
 <link href="http://www.appelsiini.net/stylesheets/main.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="http://static.taevas.ee/facebox/facebox.css" type="text/css" media="screen" title="no title" charset="utf-8">
@@ -23,7 +23,7 @@
 $(function() {
     var previous = "";
     $(window).bind("scroll", function(event) {
-        var message = "<h3>Images in viewport:</h3> With  ";
+        var message = "<h3>Images in viewport:</h3> ";
         
         $("#photos img:in-viewport").each(function() {
           message = message + $(this).attr("src") + "<br />";
@@ -54,7 +54,7 @@ $(function() {
     <div id="header">
       <p>
         <h1>Viewport</h1><br />
-        <small>Selectors which tell if element (or part of it) is visible.</small>
+        <small>Selectors which tell if element (or part of it) is in viewport.</small>
         <ul id="nav">
           <li id="first"><a href="/" class="active">weblog</a></li>
           <li><a href="/projects" class="last">projects</a></li>
