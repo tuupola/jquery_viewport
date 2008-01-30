@@ -36,11 +36,11 @@
     };
     
     $.extend($.expr[':'], {
-        belowthefold  : "$.belowthefold(a,  {threshold : 0})",
-        abovethetop   : "$.abovethetop(a,   {threshold : 0})",
-        leftofscreen  : "$.leftofscreen(a,  {threshold : 0})",
-        rightofscreen : "$.rightofscreen(a, {threshold : 0})",
-        inviewport    : "$.inviewport(a,    {threshold : 0})"
+        "below-the-fold"  : "$.belowthefold(a,  {threshold : 0})",
+        "above-the-top"   : "$.abovethetop(a,   {threshold : 0})",
+        "left-of-screen"  : "$.leftofscreen(a,  {threshold : 0})",
+        "right-of-screen" : "$.rightofscreen(a, {threshold : 0})",
+        "in-viewport"     : "$.inviewport(a,    {threshold : 0})"
     });
     
 })(jQuery);
