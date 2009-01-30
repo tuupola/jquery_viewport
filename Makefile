@@ -12,7 +12,7 @@ viewport: jquery.viewport.js
 	cp jquery.viewport.js $(DOWNLOAD)/jquery.viewport-$(VERSION).js
 
 packed: jquery.viewport.js
-	$(JSPACKER) -i jquery.viewport.js -o jquery.viewport.pack.js -f -e62
+	$(JSPACKER) < jquery.viewport.js > jquery.viewport.pack.js
 	cp jquery.viewport.pack.js $(DOWNLOAD)/jquery.viewport-$(VERSION).pack.js
 
 minified: jquery.viewport.js
