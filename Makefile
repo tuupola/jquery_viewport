@@ -1,10 +1,10 @@
 # $Id$
 
-VERSION = 0.8.1
+VERSION = 0.8.2
 SHELL = /bin/sh
-DOWNLOAD = /export/home/tuupola/rails/mephisto-svn/public/download
-JSPACKER = /export/home/tuupola/bin/jspacker
-JSMIN    = /export/home/tuupola/bin/jsmin
+DOWNLOAD = /var/www/www.appelsiini.net/htdocs/download
+JSPACKER = /home/tuupola/bin/jspacker
+JSMIN = /home/tuupola/bin/jsmin
 
 all: viewport packed minified latest
 
