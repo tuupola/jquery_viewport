@@ -11,7 +11,7 @@
  *
  */
 (function($) {
-    
+
     $.belowthefold = function(element, settings) {
         var fold = $(window).height() + $(window).scrollTop();
         return fold <= $(element).offset().top - settings.threshold;
@@ -21,21 +21,59 @@
         var top = $(window).scrollTop();
         return top >= $(element).offset().top + $(element).height() - settings.threshold;
     };
-    
+
     $.rightofscreen = function(element, settings) {
         var fold = $(window).width() + $(window).scrollLeft();
         return fold <= $(element).offset().left - settings.threshold;
     };
-    
+
     $.leftofscreen = function(element, settings) {
         var left = $(window).scrollLeft();
         return left >= $(element).offset().left + $(element).width() - settings.threshold;
     };
-    
+
     $.inviewport = function(element, settings) {
-        return !$.rightofscreen(element, settings) && !$.leftofscreen(element, settings) && !$.belowthefold(element, settings) && !$.abovethetop(element, settings);
+        var $element = $(element);
+        var offset = $element.offset();
+
+        var $window = $(window);
+        var windowTop = $window.scrollTop();
+        var top = offset.top - settings.threshold;
+
+        if (top < windowTop) {
+            if (top + $element.height() < windowTop) {
+                return false;
+            } else {
+                // top edge below the window's top
+            }
+        } else {
+            if (top > windowTop + $window.height()) {
+                return false;
+            } else {
+                // bottom edge above the window's bottom
+            }
+        }
+
+        var windowLeft = $window.scrollLeft();
+        var left = offset.left - settings.threshold;
+
+        if (left < windowLeft) {
+            if (left + $element.width() < windowLeft) {
+                return false;
+            } else {
+                // left edge be on the left side of the window's left edge
+            }
+        } else {
+            if (left > windowLeft + $window.width()) {
+                return false;
+            } else {
+                // right edge be on the right side of the window's right edge
+            }
+        }
+
+        return true;
     };
-    
+
     $.extend($.expr[':'], {
         "below-the-fold": function(a, i, m) {
             return $.belowthefold(a, {threshold : 0});
@@ -54,5 +92,5 @@
         }
     });
 
-    
+
 })(jQuery);
