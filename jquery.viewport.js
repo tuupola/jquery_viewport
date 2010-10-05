@@ -38,36 +38,35 @@
 
         var $window = $(window);
         var windowTop = $window.scrollTop();
-        var top = offset.top - settings.threshold;
+        var threshold = settings.threshold;
 
-        if (top < windowTop) {
-            if (top + $element.height() < windowTop) {
-                return false;
-            } else {
+        if (offset.top - threshold < windowTop) {
+            if (offset.top + $element.height() + threshold >= windowTop) {
                 // top edge below the window's top
+            } else {
+                return false;
             }
         } else {
-            if (top > windowTop + $window.height()) {
-                return false;
-            } else {
+            if (offset.top - threshold <= windowTop + $window.height()) {
                 // bottom edge above the window's bottom
+            } else {
+                return false;
             }
         }
 
         var windowLeft = $window.scrollLeft();
-        var left = offset.left - settings.threshold;
 
-        if (left < windowLeft) {
-            if (left + $element.width() < windowLeft) {
-                return false;
-            } else {
+        if (offset.left - threshold < windowLeft) {
+            if (offset.left + $element.width() + threshold >= windowLeft) {
                 // left edge be on the left side of the window's left edge
+            } else {
+                return false;
             }
         } else {
-            if (left > windowLeft + $window.width()) {
-                return false;
-            } else {
+            if (offset.left - threshold <= windowLeft + $window.width()) {
                 // right edge be on the right side of the window's right edge
+            } else {
+                return false;
             }
         }
 
